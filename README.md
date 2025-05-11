@@ -58,13 +58,13 @@ This repository contains the codebase for our AI Interviewer platform, built for
 
 ---
 
-License & Disclaimer
+### License & Disclaimer
 
 This is a proprietary submission made for the Venturethon program hosted by Soonami.All rights reserved. No part of this repository — including design, workflows, and code — may be copied, reused, or reproduced without explicit permission.
 
 --
 
-Questions or Setup Help?
+### Questions or Setup Help?
 
 Ping us if:
 
