@@ -1,0 +1,63 @@
+python-slugify==8.0.1  # https://github.com/un33k/python-slugify
+Pillow==9.5.0  # https://github.com/python-pillow/Pillow
+argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
+whitenoise==6.4.0  # https://github.com/evansd/whitenoise
+redis==4.5.5  # https://github.com/redis/redis-py
+hiredis==2.2.3  # https://github.com/redis/hiredis-py
+cryptography==44.0.2 # For socialauth
+
+# Django
+# ------------------------------------------------------------------------------
+django==4.2.16  # https://www.djangoproject.com/
+django-environ==0.10.0  # https://github.com/joke2k/django-environ
+django-model-utils==4.3.1  # https://github.com/jazzband/django-model-utils
+django-crispy-forms==2.0  # https://github.com/django-crispy-forms/django-crispy-forms
+crispy-bootstrap5==0.7  # https://github.com/django-crispy-forms/crispy-bootstrap5
+django-redis==5.2.0  # https://github.com/jazzband/django-redis
+django-storages==1.14.4 # https://github.com/jschneier/django-storages
+django-filter==23.1
+django-cleanup==8.0.0
+django-allauth==65.7.0
+
+# Django REST Framework
+# ------------------------------------------------------------------------------
+djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
+djangorestframework-simplejwt==5.1.0
+drf-yasg==1.21.5
+django-cors-headers==4.0.0  # https://github.com/adamchainz/django-cors-headers
+# DRF-spectacular for api documentation
+drf-spectacular==0.26.2  # https://github.com/tfranzel/drf-spectacular
+django-crispy-forms
+django-import-export
+
+# Other Utils
+# ------------------------------------------------------------------------------
+django-phonenumber-field[phonenumbers]==7.3.0
+
+# Payment
+# ------------------------------------------------------------------------------
+razorpay
+
+
+# AI
+# -------------------------------------------------------------------------
+pyttsx3==2.90
+pypdf==4.0.2
+premai==0.3.20
+langchain==0.3.23
+langchain-cerebras==0.5.0
+langchain-community==0.3.21
+langchain-core==0.3.54
+langchain-google-genai==2.1.3
+langchain-groq==0.3.2
+langchain-openai==0.3.14
+langchain-text-splitters==0.3.8
+#google-ai-generativelanguage==0.6.2
+#google-api-core==2.15.0
+#google-auth==2.26.1
+#google-generativeai==0.5.2
+#googleapis-common-protos==1.62.0
+
+# Utils
+# -------------------------------------------------------------------------
+weasyprint==63.1

@@ -1,0 +1,26 @@
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# Node.js dependencies (we install these inside the container)
+node_modules
+
+# Next.js build output (we generate this inside the container)
+.next
+
+# Local environment variables
+.env*
+!.env.example
+!.env.production
+
+# Test artifacts
+coverage
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

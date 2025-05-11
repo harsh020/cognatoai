@@ -1,0 +1,5 @@
+#susanoo/*/migrations/*.py
+.env
+.envs/*
+logs/
+susanoo/media/**/

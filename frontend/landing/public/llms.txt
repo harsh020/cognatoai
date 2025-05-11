@@ -1,0 +1,24 @@
+# Cognato AI
+
+> Cognato AI is a realistic, AI-powered interviewer that enables companies to streamline candidate screening with intelligent, human-like simulations and helps candidates prepare for real-world technical interviews.
+
+Cognato AI simulates realistic, end-to-end interviews — coding, behavioral — with dynamic questioning, adaptive follow-ups, and in-depth feedback. It's built for both businesses conducting them at scale and individuals practicing for interviews.
+
+## Website
+
+- [Home](https://cognatoai.com): Explore how Cognato helps hiring teams, students, and job seekers run realistic interview simulations powered by AI.
+- [Sign Up](https://cognatoai.com/auth/signup): Create a free account and try your first AI-powered interview.
+- [Log In](https://cognatoai.com/auth/login): Login to your created account and continue your AI-powered interview experience.
+
+## Product Docs
+
+- [Getting Started](https://cognatoai.com): Quick-start guide for candidates and companies using Cognato.
+- [Interview Types](https://cognatoai.com): Details on the different kinds of interviews supported — coding, behavioral, system design, etc.
+- [API Reference](https://cognatoai.com): REST API for integrating Cognato into recruitment workflows or learning platforms.
+- [Integration Guide](https://cognatoai.com): How to embed Cognato into ATS or university platforms.
+
+## Optional
+
+- [Team & Backstory](https://cognatoai.com): Meet the team behind Cognato AI and the story that inspired the product.
+- [LinkedIn Company Page](https://www.linkedin.com/company/cognato-ai): Our official LinkedIn page.
+- [Use Cases](https://cognatoai.com): How universities, students, and companies are using Cognato today.

@@ -1,0 +1,15 @@
+import {request} from "@/lib/utils";
+
+
+export const BILLING_APIS = {
+
+  retrieve: (id, configs) => {
+    return request({
+      baseURL: process.env.NEXT_PUBLIC_APP_BACKEND_URL,
+      url: `/api/v1/billings/`,
+      method: 'GET',
+      ...configs
+    })
+  },
+
+}

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interview Result</title>
+        <style>
+            /* A4 Page Dimensions */
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                color: #2c3e50;
+                background-color: #fff;
+                padding: 10px;
+                line-height: 1.6;
+                margin: 0 auto; /* Center the content */
+                box-sizing: border-box;
+            }
+
+            /* General Styles */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #34495e;
+                margin-top: 15px;
+                margin-bottom: 10px;
+                page-break-after: avoid;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: #3498db;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            strong {
+                font-weight: 600;
+            }
+
+            /* Section Styles */
+            .section {
+                margin-bottom: 25px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                page-break-inside: avoid;
+            }
+
+            .section-title {
+                display: flex;
+                align-items: center;
+                font-size: 22px;
+                font-weight: bold;
+                color: #34495e;
+                border-bottom: 2px solid #ddd;
+                padding-bottom: 10px;
+                margin-bottom: 15px;
+            }
+
+            .section-title span {
+                margin-right: 10px;
+                font-size: 26px;
+            }
+
+            /* Interview & Candidate Details Styles */
+            .details-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            .details-table th,
+            .details-table td {
+                text-align: left;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .details-table th {
+                width: 30%;
+                font-weight: 600;
+                background-color: #f0f0f0;
+            }
+
+            .interview-details .details-table th {
+                background-color: #e6f2ff; /* Light blue for Interview Details */
+            }
+
+            .candidate-details .details-table th {
+                background-color: #f0fff0; /* Light green for Candidate Details */
+            }
+
+            /* Feedback, Discussion, and Coding Styles */
+            .feedback-item,
+            .discussion-item {
+                margin-bottom: 20px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                padding: 15px;
+            }
+
+            .feedback-title,
+            .discussion-question-title {
+                font-weight: 600;
+                color: #34495e;
+                margin-bottom: 10px;
+            }
+
+            .feedback-comment,
+            .discussion-question,
+            .discussion-answer {
+                margin-top: 5px;
+                color: #555;
+            }
+
+            .card {
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+
+            .card h3 {
+                color: #34495e;
+                margin-bottom: 10px;
+            }
+
+            /* Code Styles */
+            pre {
+                background-color: #f8f8f8;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                overflow-x: auto;
+                font-family: "Courier New", monospace;
+                color: #555;
+                white-space: pre-wrap;
+                font-size: 12px;
+            }
+
+            code {
+                font-family: "Courier New", monospace;
+                color: #555;
+                font-size: 12px;
+            }
+
+            /* Print-Specific Styles */
+            @media print {
+                body {
+                    font-size: 11pt;
+                }
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Interview Details Section -->
+        <div class="section interview-details">
+            <div class="section-title">
+                <span>🎥</span>
+                <span>Interview Details</span>
+            </div>
+            <table class="details-table">
+                <tbody>
+                    {% for detail in interview %}
+                    <tr>
+                        <th>{{ detail.label }}</th>
+                        <td>{{ detail.value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Candidate Details Section -->
+        <div class="section candidate-details">
+            <div class="section-title">
+                <span>👤</span>
+                <span>Candidate Details</span>
+            </div>
+            <table class="details-table">
+                <tbody>
+                    {% for detail in candidate %}
+                    <tr>
+                        <th>{{ detail.label }}</th>
+                        <td>
+                            {% if detail.label == 'Resume' %}
+                            <a href="{{ detail.value }}" target="_blank"
+                                >View Resume</a
+                            >
+                            {% else %} {{ detail.value }} {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="section">
+            <div class="section-title">
+                <span>💬</span>
+                <span>Feedback</span>
+            </div>
+            {% for feedback in feedback %}
+            <div class="feedback-item">
+                <div class="feedback-title">
+                    <span>{{ feedback.title }}</span>
+                    <span class="badge {{ feedback.score_class }}"
+                        >{{ feedback.score }}</span
+                    >
+                </div>
+                <p class="feedback-comment">{{ feedback.comment }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Discussion Section -->
+        <div class="section">
+            <div class="section-title">
+                <span>📂</span>
+                <span>Discussion</span>
+            </div>
+            {% for discussion in resume_discussion %}
+            <div class="discussion-item">
+                <p class="discussion-question">
+                    <strong>Question:</strong> {{ discussion.question }}
+                </p>
+                <p class="discussion-answer">
+                    <strong>Answer:</strong> {{ discussion.answer }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Coding Questions Section -->
+        <div class="section">
+            <div class="section-title">
+                <span>🖥️</span>
+                <span>Coding</span>
+            </div>
+            {% if coding %}
+            <div class="coding-container">
+                {% for code in coding %}
+                <div class="card">
+                    <h3>Question {{ forloop.counter }}</h3>
+                    <p>{{ code.question }}</p>
+                    {% if code.code %}
+                    <pre><code>{{ code.code }}</code></pre>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="card">
+                <h3>No Coding Questions</h3>
+                <p>There were no coding questions for this interview.</p>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>

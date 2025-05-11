@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interview Result</title>
+        <style>
+            /* Page Setup (Dark Theme, Elegant) */
+            body {
+                font-family: "Arial", sans-serif; /* Modern font */
+                background-color: #212f3d; /* Deep blue background */
+                color: #eaeded; /* Light text color */
+                padding: 40px;
+                line-height: 1.7;
+                margin: 0 auto;
+                box-sizing: border-box;
+                overflow-x: hidden; /* Hide horizontal scrollbars for cleaner print */
+            }
+
+            /* Remove Page Breaks/Borders in Print */
+            @page {
+                size: A4;
+                margin: 0; /* Eliminates most page borders */
+            }
+
+            /* Headings */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #d5dbdb; /* Slightly off-white headings */
+                font-weight: 600; /* Slightly bolder headings */
+                margin-top: 25px;
+                margin-bottom: 15px;
+                break-after: avoid; /* Better control of page breaks for headings */
+            }
+
+            /* Links */
+            a {
+                color: #3498db; /* Bright blue links */
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                margin-bottom: 40px; /* Space below header */
+                padding-bottom: 20px;
+                border-bottom: 1px solid #34495e; /* Subtle separator */
+            }
+
+            .header img {
+                height: 50px !important;
+                width: 50px !important;
+                margin-right: 10px;
+            }
+
+            .company-info {
+                text-align: left; /* Align text to the right */
+            }
+
+            .company-name {
+                font-size: 20px;
+                font-weight: bold;
+                color: #e5e8e8; /* Light company name color */
+                margin-bottom: 5px;
+            }
+
+            /* Sections */
+            .section {
+                margin-bottom: 35px;
+                background-color: #273746; /* Darker, more stylish section background */
+                border-radius: 10px; /* Softer border radius */
+                padding: 30px; /* Increased padding for more breathing room */
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+                break-inside: avoid; /* Prevents sections from breaking across pages */
+            }
+
+            .section-title {
+                display: flex;
+                align-items: center;
+                font-size: 26px; /* Larger title */
+                font-weight: 700; /* Bolder title */
+                color: #e5e8e8; /* Slightly lighter title color */
+                border-bottom: 2px solid #34495e;
+                padding-bottom: 18px; /* Increased padding */
+                margin-bottom: 25px; /* Increased margin */
+            }
+
+            .section-title span {
+                margin-right: 14px; /* Increased margin */
+                font-size: 30px; /* Larger icon */
+            }
+
+            /* Details Tables */
+            .details-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 25px;
+            }
+            .details-table th,
+            .details-table td {
+                text-align: left;
+                padding: 14px 18px;
+                border-bottom: 1px solid #34495e;
+            }
+            .details-table th {
+                width: 35%; /* Adjusted width */
+                font-weight: 600;
+                background-color: #2c3e50; /* Dark header */
+                color: #eaeded;
+            }
+
+            .details-grid {
+                display: grid;
+                grid-template-columns: repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                ); /* Responsive grid for details */
+                grid-gap: 20px;
+            }
+
+            .detail-item {
+                border: 1px solid #34495e;
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            /* Feedback & Discussion */
+            .feedback-item,
+            .discussion-item {
+                margin-bottom: 25px;
+                background-color: #2c3e50;
+                border-radius: 8px;
+                padding: 20px;
+                border: 1px solid #34495e;
+            }
+
+            .feedback-title,
+            .discussion-question-title {
+                font-weight: 600;
+                color: #eaeded;
+                margin-bottom: 12px;
+                font-size: 18px;
+            }
+
+            .feedback-comment,
+            .discussion-question,
+            .discussion-answer {
+                margin-top: 8px; /* Added margin for better spacing */
+                color: #d1d5da; /* Slightly lighter text */
+            }
+
+            /* Badges */
+            .badge {
+                padding: 6px 12px;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 14px;
+                margin-left: 10px;
+            }
+            .badge-success {
+                background-color: #2ecc71;
+                color: #fff;
+            }
+            .badge-average {
+                background-color: #f1c40f;
+                color: #fff;
+            }
+            .badge-poor {
+                background-color: #e74c3c;
+                color: #fff;
+            }
+
+            /* Code */
+            pre {
+                background-color: #222d36;
+                padding: 18px; /* Increased padding */
+                border-radius: 8px;
+                overflow-x: auto;
+                font-family: "Consolas", "Courier New", monospace; /* More code-oriented font stack */
+                color: #a6acaf;
+                font-size: 13px; /* Slightly larger font */
+                white-space: pre-wrap;
+                border: 1px solid #34495e;
+            }
+            code {
+                font-size: 13px;
+                color: #a6acaf;
+            }
+
+            /* Print Styles */
+            @media print {
+                body {
+                    font-size: 11pt;
+                    padding: 20px; /* Reduced padding for print */
+                }
+                a {
+                    text-decoration: none;
+                    color: #000; /* Black links for print */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img
+                src="https://cognatoai.blob.core.windows.net/assets/cognatoai-logo-sm.png"
+                alt="Logo"
+                height="20px"
+                width="auto"
+            />
+
+            <div class="company-info">
+                <div class="company-name">Cognato AI</div>
+                <!-- <div>Your Company Tagline (Optional)</div> -->
+            </div>
+        </div>
+
+        <!-- Interview Details Section -->
+        <div class="section interview-details">
+            <div class="section-title">
+                <span>Interview Details</span>
+            </div>
+            <table class="details-table">
+                <tbody>
+                    {% for detail in interview %}
+                    <tr>
+                        <th>{{ detail.label }}</th>
+                        <td>{{ detail.value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Candidate Details Section -->
+        <div class="section candidate-details">
+            <div class="section-title">
+                <span>Candidate Details</span>
+            </div>
+            <table class="details-table">
+                <tbody>
+                    {% for detail in candidate %}
+                    <tr>
+                        <th>{{ detail.label }}</th>
+                        <td>
+                            {% if detail.label == 'Resume' %}
+                            <a href="{{ detail.value }}" target="_blank"
+                                >View Resume</a
+                            >
+                            {% else %} {{ detail.value }} {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="section">
+            <div class="section-title">
+                <span>Feedback</span>
+            </div>
+            {% for feedback in feedback %}
+            <div class="feedback-item">
+                <div class="feedback-title">
+                    <span>{{ feedback.title }}</span>
+                    <span class="badge {{ feedback.score_class }}"
+                        >{{ feedback.score }}</span
+                    >
+                </div>
+                <p class="feedback-comment">{{ feedback.comment }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Discussion Section -->
+        <div class="section">
+            <div class="section-title">
+                <span>Discussion</span>
+            </div>
+            {% for discussion in resume_discussion %}
+            <div class="discussion-item">
+                <p class="discussion-question">
+                    <strong>Question:</strong> {{ discussion.question }}
+                </p>
+                <p class="discussion-answer">
+                    <strong>Answer:</strong> {{ discussion.answer }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Coding Questions Section -->
+        <div class="section">
+            <div class="section-title">
+                <span>Coding</span>
+            </div>
+            {% if coding %}
+            <div class="coding-container">
+                {% for code in coding %}
+                <div class="card">
+                    <h3>Question {{ forloop.counter }}</h3>
+                    <p>{{ code.question }}</p>
+                    {% if code.code %}
+                    <pre><code>{{ code.code }}</code></pre>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="card">
+                <h3>No Coding Questions</h3>
+                <p>There were no coding questions for this interview.</p>
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>

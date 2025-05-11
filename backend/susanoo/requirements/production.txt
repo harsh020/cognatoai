@@ -1,0 +1,17 @@
+# PRECAUTION: avoid production dependencies that aren't in development
+
+-r base.txt
+
+gunicorn==20.1.0  # https://github.com/benoitc/gunicorn
+psycopg2==2.9.6  # https://github.com/psycopg/psycopg2
+
+# Django
+# ------------------------------------------------------------------------------
+django-anymail==10.0  # https://github.com/anymail/django-anymail
+
+# Storage
+# -----------------------------------------------------------------------------
+# azure-storage-blob==12.20.0
+# boto3==1.34.144
+google-cloud-storage==2.18.2
+google-resumable-media==2.7.2

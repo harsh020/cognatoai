@@ -1,0 +1,17 @@
+"use client"
+
+export const AUDIO_STATUS = {
+  INACTIVE: 'INACTIVE',
+  READY: 'READY',
+  PLAYING: 'PLAYING',
+  PAUSED: 'PAUSED',
+}
+
+export const RECORDING_STATUS = {
+  PENDING: 'PENDING',
+  PROCESSING: 'PROCESSING',
+  PROCESSED: 'PROCESSED',
+  FAILED: 'FAILED',
+}
+
+export const PRE_INTERVIEW_CREDIT = 8;

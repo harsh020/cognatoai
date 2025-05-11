@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cognatoai.com/sitemap.xml
+LLM-discovery: https://cognatoai.com/llms.txt
+LLM-discovery: https://cognatoai.com/llms-full.txt

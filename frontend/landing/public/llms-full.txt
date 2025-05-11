@@ -1,0 +1,107 @@
+# Cognato AI
+
+> Say goodbye to boring screening—hello to Cognato AI.
+> Automate technical interviews with human-like precision. Conduct unlimited AI-driven interviews, uncover deep candidate insights, and deliver consistent, bias-resistant feedback—in a fraction of the time.
+
+Cognato AI combines realistic, adaptive interview simulations with data-driven reporting to help individuals practice and excel, and organizations hire faster and fairer.
+
+---
+
+## Home Page
+
+Welcome to **Cognato AI**, the next generation of AI-powered mock interviewing. Whether you’re:
+
+- **A hiring team** aiming to streamline and standardize your screening process, or
+- **A recruitment agency** delivering premium vetting services
+- **A candidate** sharpening your technical skills,
+
+Cognato AI offers a seamless, end-to-end solution from invitation to final report.
+
+Get started instantly with our free trial, or explore our features and pricing to find the right plan for you.
+
+---
+
+## Why Cognato AI?
+
+- **Human-level Simulations**
+  Our AI interviewer adapts to every answer, poses intelligent follow-up questions, and mirrors real-world coding, system design, and behavioral interview dynamics.
+
+- **Data-Driven Decisions**
+  Leverage standardized scoring, in-depth code-quality metrics, and personalized growth recommendations to make hiring or upskilling choices with complete confidence.
+
+- **End-to-End Automation**
+  From scheduling and candidate invites to detailed feedback delivery, Cognato AI handles the heavy lifting—freeing your team to focus on the human side of hiring.
+
+---
+
+## Multiple Use Cases
+
+### For Organizations
+- **Consistent & Fair**
+  Objective, bias-resistant scoring removes interviewer variability.
+- **Efficient Workflow**
+  Automate up to 90% of routine screening tasks—save engineering hours.
+- **Top-Talent Identification**
+  Quickly pinpoint candidates who meet your bar with standardized insights.
+
+### For Candidates
+- **Practice Makes Perfect**
+  Simulate real company-style coding, system design, and behavioral rounds at your own pace.
+- **Instant Feedback**
+  Receive detailed performance reports highlighting strengths, weaknesses, and next steps.
+- **Career Confidence**
+  Track your improvement over time and enter real interviews fully prepared.
+
+### For Recruitment Agencies
+- **Customizable Modules**
+  Combine prebuilt question banks with your own content to match any tech stack.
+- **Pipeline Management**
+  Track candidate progress, share in-depth reports, and collaborate with clients in one dashboard.
+- **Seamless Integration**
+  API-first design lets you embed Cognato AI into your existing ATS or CRM effortlessly.
+
+---
+
+## Core Features
+
+- **Realistic Interview Engine**
+  Dynamic questioning, live coding IDE, and AI-driven hints replicate the nuance of a human interviewer.
+
+- **Modular & Extensible**
+  Choose from our library of skill modules (Python, Java, DSA, system design) or upload custom questions for full control.
+
+- **Comprehensive Reporting**
+  Concise executive summaries, detailed scorecards, code-quality analysis, and exportable PDF reports for stakeholders.
+
+- **Candidate Monitoring**
+  Screen recording and tab-switch tracking ensure interview integrity without intrusive proctoring.
+
+- **API-First Architecture**
+  Full programmatic control—schedule interviews, fetch results, and automate workflows through RESTful endpoints.
+
+---
+
+## Pricing
+
+| Plan          | Price               | Included Features                                                                                   |
+|---------------|---------------------|-----------------------------------------------------------------------------------------------------|
+| **Trial**     | $0 one-time         | Up to 5 AI interviews; realistic simulations; interview recordings & transcripts; tab-switch tracking; email support |
+| **Enterprise**| Custom              | All Pro features; auto-approved interviews; dedicated onboarding & account management; early API access |
+
+> **Start your free Trial** → https://cognatoai.com/auth/signup
+> **Interested in Enterprise?** → https://cognatoai.com
+
+---
+
+## Connect With Us
+
+Have questions or need a demo? Reach out and let’s transform your interviewing and hiring experience together—on the house!
+
+---
+
+# Optional Resources
+
+- **About & Team**: https://cognatoai.com
+- **Use Cases**: https://cognatoai.com
+- **Blog & Insights**: https://cognatoai.com
+- **API Reference**: https://cognatoai.com

@@ -1,0 +1,32 @@
+# Use base image for build stage
+FROM node:21.6.2-alpine AS builder
+
+# Set workdir
+WORKDIR /usr/src/app
+
+# Add node_modules to PATH
+ENV PATH=/usr/src/app/node_modules/.bin:$PATH
+
+# Copy app to source
+COPY . ./
+
+# Install npm packages
+RUN npm i --silent
+
+# Build
+RUN npm run build --prod --silent
+
+
+# Use base image for main stage
+FROM node:21.6.2-alpine
+
+# Get the production files to the location  /usr/src/app/build
+COPY --from=builder /usr/src/app/build /usr/src/app/build
+
+WORKDIR /usr/src/app
+
+# Server for the application
+RUN npm install -g serve
+
+# Start app
+CMD ["serve", "-s", "build"]

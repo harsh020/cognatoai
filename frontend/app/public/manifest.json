@@ -1,0 +1,31 @@
+{
+  "short_name": "Cognato AI",
+  "name": "AI Interviewer - Cognato AI",
+  "description": "Cognato AI offers realistic, AI-powered interview simulations for software engineers. Prepare for interviews or streamline hiring processes with our platform.",
+  "categories": [
+    "AI interviewer",
+    "interview practice",
+    "software engineering interview",
+    "Cognato AI",
+    "coding interview",
+    "technical interview",
+    "interview simulator",
+    "AI for hiring"
+  ],
+  "icons": [
+    {
+      "src": "/app/favicon.ico",
+      "sizes": "128x128 64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/app/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "/app",
+  "display": "standalone",
+  "theme_color": "#0d1111",
+  "background_color": "#ffffff"
+}

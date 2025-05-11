@@ -1,0 +1,100 @@
+version: "3"
+
+volumes:
+  #  susanoo_local_postgres_data: {}
+  #  susanoo_local_postgres_data_backups: {}
+  susanoo_generic_local_postgres_data: {}
+  susanoo_generic_local_postgres_data_backups: {}
+  whisper: {}
+  whisper_models: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: susanoo_local_django
+    container_name: susanoo_local_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:z
+    #      - ~/Downloads/cognato-ai-fee30096b617.json:/var/secrets/google/gcs-service-account.json
+    environment:
+      DJANGO_SUPERUSER_USERNAME: admin
+      DJANGO_SUPERUSER_PASSWORD: admin
+      DJANGO_SUPERUSER_EMAIL: admin@example.com
+    env_file:
+#      - ./.envs/.production/.django
+      - ./.envs/.local/.postgres
+      - ./.envs/.local/.django
+    ports:
+      - "8000:8000"
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: susanoo_production_postgres
+    container_name: susanoo_generic_local_postgres
+    volumes:
+      - susanoo_generic_local_postgres_data:/var/lib/postgresql/data
+      - susanoo_generic_local_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
+    ports:
+      - "5434:5432"
+
+#  gcs-emulator:
+#    image: fsouza/fake-gcs-server:latest
+#    command: -scheme http -port 4443 -public-host 0.0.0.0
+#    ports:
+#      - "4443:4443"
+#    volumes:
+#      - ./media:/media/
+#      - ./staticfiles:/staticfiles/
+
+
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - "8081:8080"
+#  whisper:
+#    build:
+#      context: .
+#      dockerfile: ./whisper/Dockerfile
+#      args:
+#        model: small.en
+#    container_name: whisper_server
+#    volumes:
+#      - whisper:/usr
+#      - whisper_models:/root
+#    ports:
+#      - '8081:8080'
+
+#  smtp-server:
+#    image: mailhog/mailhog
+#    expose:
+#      - 1025
+#      - 8025
+#    ports:
+#      - '1025:1025'
+#      - '8025:8025'
+
+#  docs:
+#    image: susanoo_local_docs
+#    container_name: susanoo_local_docs
+#    build:
+#      context: .
+#      dockerfile: ./compose/local/docs/Dockerfile
+#    env_file:
+#      - ./.envs/.local/.django
+#    volumes:
+#      - ./docs:/docs:z
+#      - ./config:/app/config:z
+#      - ./susanoo:/app/susanoo:z
+#    ports:
+#      - '9000:9000'
+#    command: /start-docs

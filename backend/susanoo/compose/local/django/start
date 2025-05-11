@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+set +e
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser --no-input
+exec python manage.py runserver 0.0.0.0:8000

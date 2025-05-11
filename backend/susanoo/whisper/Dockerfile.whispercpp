@@ -1,0 +1,10 @@
+FROM ghcr.io/ggerganov/whisper.cpp:main-cuda
+
+RUN apt update
+RUN apt install -y git make g++ vim wget
+
+WORKDIR /app
+RUN bash ./models/download-ggml-model.sh small.en
+
+#CMD ["server", "--model", "./models/ggml-${model}.bin", "--convert"]
+CMD ["server", "--model", "./models/ggml-small.en.bin", "--convert", "--port", "8080", "-pr", "-pc", "-t", "10"]
