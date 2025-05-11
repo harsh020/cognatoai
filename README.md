@@ -2,6 +2,8 @@
 
 This repository contains the codebase for our AI Interviewer platform, built for realistic, end-to-end, autonomous technical interviews. This was built and submitted as part of **Soonami's Venturethon**.
 
+Website: https://cognatoai.com
+
 ---
 
 ## Architecture Overview
